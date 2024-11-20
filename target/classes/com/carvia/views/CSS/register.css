@@ -22,7 +22,7 @@ HBox {
 }
 
 Button {
-    -fx-pref-width: 120px;
+    -fx-pref-width: 180px;
     -fx-pref-height: 35px;
     -fx-font-size: 14px;
     -fx-font-weight: bold;

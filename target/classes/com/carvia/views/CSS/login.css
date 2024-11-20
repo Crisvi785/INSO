@@ -13,37 +13,6 @@
     -fx-alignment: center;
 }
 
-/* VBox  */
-VBox {
-    -fx-alignment: center; 
-}
-
-/* etiquetas */
-VBox Label {
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #7b7b7b; 
-    -fx-alignment: center; 
-}
-
-/* Campos de texto */
-TextField, PasswordField {
-    -fx-pref-width: 300px;
-    -fx-pref-height: 30px;
-    -fx-padding: 5px;
-    -fx-font-size: 14px;
-    -fx-border-color: #adabac; 
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-background-color: #ffffff; 
-    -fx-text-fill: #4e4e4e; 
-    -fx-alignment: center; 
-}
-
-
-TextField:focused, PasswordField:focused {
-    -fx-border-color: #7b7b7b; 
-}
 
 /* botones */
 HBox {
@@ -52,7 +21,7 @@ HBox {
 }
 
 Button {
-    -fx-pref-width: 120px;
+    -fx-pref-width: 150px;
     -fx-pref-height: 35px;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
