@@ -1,62 +1,64 @@
-package com.carvia.models.dao;
 /*
- 
- import com.carvia.controllers.;
- import com.skibidypaintproject.Entities.User;
  * 
+ * 
+ * 
+ package com.carvia.models.dao;
+ 
+ import com.carvia.controllers.*;
+ //import com.carvia.Entities.User;
  import java.sql.Connection;
  import java.sql.PreparedStatement;
  import java.sql.ResultSet;
  import java.sql.SQLException;
- import java.util.List;
- import java.util.ArrayList;
  
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
  import org.mindrot.jbcrypt.BCrypt;
  
- import com.carvia.models.conexion.conexion;
+ public class UserDAO {
  
- public class UserDAO extends conexion {
+     private final Connection connection;
+     private static final Logger logger = LogManager.getLogger(UserDAO.class);
  
-     public List<Usuario> listar() throws Exception {
-         ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
-         try {
-             this.abrirConexion();
-             PreparedStatement st = this.getConexion().prepareStatement("SELECT * FROM usuarios");
-             ResultSet rs = st.executeQuery();
- 
-             while (rs.next()) {
-                 Usuario usuario = new Usuario();
-                 usuario.setIdUsuario(rs.getInt("idUsuario"));
-                 usuario.setUser(rs.getString("user"));
-                 usuario.setPassword(rs.getString("password"));
-                 usuario.setTipo(TipoDeUsuario.valueOf(rs.getString("Tipo")));
-                 listaUsuarios.add(usuario);
-             }
- 
-             this.cerrarConexion();
-         } catch (Exception e) {
-             throw new Exception("Listar usuarios: " + e.getMessage());
-         }
-         return listaUsuarios;
+     public UserDAO() {
+         this.connection = BBDDController.getInstance().getConnection();
      }
  
-     public void eliminar(Usuario usuario) throws Exception {
-         try {
-             this.abrirConexion();
-             PreparedStatement st = this.getConexion().prepareStatement("DELETE FROM usuarios WHERE idUsuario=?");
-             st.setInt(1, usuario.getIdUsuario());
-             st.executeUpdate();
-         } catch (Exception e) {
-             throw new Exception("Método Eliminar un usuario: " + e.getMessage());
-         } finally {
-             try {
-                 this.cerrarConexion();
-             } catch (Exception e) {
-                 throw new Exception("Método Eliminar un usuario: " + e.getMessage());
-             }
+     public boolean insertUser(User user) {
+         String query = "INSERT INTO users (username, password) VALUES (?, ?)";
+         try (PreparedStatement statement = connection.prepareStatement(query)) {
+ 
+             String hashedPass = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+             user.setPassword(hashedPass);
+             statement.setString(1, user.getUsername());
+             statement.setString(2, hashedPass);
+             logger.info("User " + user.getUsername() + " registered");
+             return statement.executeUpdate() > 0;
+         } catch (SQLException e) {
+             logger.error("Error registering user " + user.getUsername());
+             e.printStackTrace();
+             return false;
          }
+     }
+ 
+     public User getUserByUsername(String username) {
+         String query = "SELECT * FROM users WHERE username = ?";
+         try (PreparedStatement statement = connection.prepareStatement(query)) {
+             statement.setString(1, username);
+             ResultSet resultSet = statement.executeQuery();
+             if (resultSet.next()) {
+                 int id = resultSet.getInt("id");
+                 String password = resultSet.getString("password");
+                 logger.info("User " + username + " found");
+                 return new User(id, username, password);
+             }
+         } catch (SQLException e) {
+             logger.error("Error getting user " + username);
+             e.printStackTrace();
+         }
+         return null;
      }
  }
+ * 
  */
+

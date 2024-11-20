@@ -1,6 +1,6 @@
-/* Fondo general del formulario */
+
 .root {
-    -fx-background-color: #ffffff; /* Blanco */
+    -fx-background-color: #ffffff; 
     -fx-font-family: "Arial";
 }
 
@@ -13,17 +13,17 @@
     -fx-alignment: center;
 }
 
-/* VBox general */
+/* VBox  */
 VBox {
-    -fx-alignment: center; /* Asegura el centrado en todos los VBoxes */
+    -fx-alignment: center; 
 }
 
-/* Estilo de las etiquetas */
+/* etiquetas */
 VBox Label {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #7b7b7b; /* Gris medio */
-    -fx-alignment: center; /* Asegura el centrado */
+    -fx-text-fill: #7b7b7b; 
+    -fx-alignment: center; 
 }
 
 /* Campos de texto */
@@ -32,23 +32,23 @@ TextField, PasswordField {
     -fx-pref-height: 30px;
     -fx-padding: 5px;
     -fx-font-size: 14px;
-    -fx-border-color: #adabac; /* Gris claro */
+    -fx-border-color: #adabac; 
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
-    -fx-background-color: #ffffff; /* Blanco */
-    -fx-text-fill: #4e4e4e; /* Gris oscuro */
-    -fx-alignment: center; /* Asegura el centrado del contenido */
+    -fx-background-color: #ffffff; 
+    -fx-text-fill: #4e4e4e; 
+    -fx-alignment: center; 
 }
 
-/* Efecto al enfocarse */
+
 TextField:focused, PasswordField:focused {
-    -fx-border-color: #7b7b7b; /* Gris medio */
+    -fx-border-color: #7b7b7b; 
 }
 
 /* botones */
 HBox {
-    -fx-padding: 10px 0; /* Espaciado superior e inferior */
-    -fx-alignment: center; /* Centra el contenido */
+    -fx-padding: 10px 0; 
+    -fx-alignment: center; 
 }
 
 Button {
@@ -66,12 +66,12 @@ Button {
 
 
 Button:hover {
-    -fx-background-color: #7b7b7b; /* Gris medio */
+    -fx-background-color: #7b7b7b; 
     -fx-cursor: hand;
 }
 
 Button:pressed {
-    -fx-background-color: #adabac; /* Gris claro */
+    -fx-background-color: #adabac; 
 }
 
 /* panel derecho */
