@@ -1,0 +1,97 @@
+/* Fondo general del formulario */
+.root {
+    -fx-background-color: #ffffff; /* Blanco */
+    -fx-font-family: "Arial";
+}
+
+
+#title-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4e4e4e; 
+    -fx-padding: 10px 0;
+    -fx-alignment: center;
+}
+
+/* VBox general */
+VBox {
+    -fx-alignment: center; /* Asegura el centrado en todos los VBoxes */
+}
+
+/* Estilo de las etiquetas */
+VBox Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7b7b7b; /* Gris medio */
+    -fx-alignment: center; /* Asegura el centrado */
+}
+
+/* Campos de texto */
+TextField, PasswordField {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 30px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-border-color: #adabac; /* Gris claro */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color: #ffffff; /* Blanco */
+    -fx-text-fill: #4e4e4e; /* Gris oscuro */
+    -fx-alignment: center; /* Asegura el centrado del contenido */
+}
+
+/* Efecto al enfocarse */
+TextField:focused, PasswordField:focused {
+    -fx-border-color: #7b7b7b; /* Gris medio */
+}
+
+/* botones */
+HBox {
+    -fx-padding: 10px 0; /* Espaciado superior e inferior */
+    -fx-alignment: center; /* Centra el contenido */
+}
+
+Button {
+    -fx-pref-width: 120px;
+    -fx-pref-height: 35px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: #4e4e4e; 
+    -fx-text-fill: #ffffff; 
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: transparent;
+
+}
+
+
+Button:hover {
+    -fx-background-color: #7b7b7b; /* Gris medio */
+    -fx-cursor: hand;
+}
+
+Button:pressed {
+    -fx-background-color: #adabac; /* Gris claro */
+}
+
+/* panel derecho */
+.side-pane {
+    -fx-background-color: #adabac; 
+    -fx-padding: 20px;
+}
+
+.side-pane Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4e4e4e; 
+    -fx-alignment: center;
+    -fx-padding: 5px 0;
+}
+
+
+ImageView {
+    -fx-padding: 20px 0;
+}
+
+.left {
+    -fx-background-color: #ffffff; 
+}

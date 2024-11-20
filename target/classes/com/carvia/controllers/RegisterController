@@ -1,0 +1,47 @@
+package com.carvia.controllers;
+
+import java.io.IOException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import org.mindrot.jbcrypt.BCrypt;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import com.carvia.App;
+import com.carvia.utils.AlertUtil;
+
+public class RegisterController {
+
+    @FXML
+    private TextField usernameField;
+
+    @FXML
+    private TextField fullnameField;
+
+    @FXML
+    private TextField emailField;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private Button registerButton;
+
+    @FXML
+    private Button backToLoginButton;
+
+    @FXML
+    private void handleRegisterButtonAction() {
+        System.out.println("Usuario registrado: " + usernameField.getText());
+        // Implementa la lógica de registro aquí.
+    }
+
+    @FXML
+    private void handleBackToLoginAction() {
+        System.out.println("Volver al inicio de sesión.");
+        // Implementa la lógica para volver al inicio de sesión aquí.
+    }
+}

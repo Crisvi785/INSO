@@ -1,0 +1,27 @@
+
+
+
+
+
+
+/* panel derecho */
+.side-pane {
+    -fx-background-color: #adabac; 
+    -fx-padding: 20px;
+}
+
+.side-pane Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4e4e4e; 
+    -fx-alignment: center;
+    -fx-padding: 5px 0;
+}
+
+
+ImageView {
+    -fx-padding: 20px 0;
+}
+
+.left {
+    -fx-background-color: #ffffff; 
+}

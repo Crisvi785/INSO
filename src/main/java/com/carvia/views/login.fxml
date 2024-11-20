@@ -16,14 +16,17 @@
             stylesheets="@CSS/login.css">
     <left>
         <VBox alignment="CENTER" prefWidth="400.0" spacing="20.0" BorderPane.alignment="CENTER">
+            
             <Label text="INICIAR SESIÓN" id="title-label"/>
-            <VBox spacing="10.0">
+
+           <VBox spacing="10.0" alignment="CENTER">                
                 <Label text="USUARIO:"/>
-                <TextField fx:id="usernameField" promptText="Ingrese su usuario"/>
+                <TextField fx:id="usernameField" promptText="Ingrese su usuario" alignment="CENTER"/>
                 <Label text="CONTRASEÑA:"/>
-                <PasswordField fx:id="passwordField" promptText="Ingrese su contraseña"/>
+                <PasswordField fx:id="passwordField" promptText="Ingrese su contraseña" alignment="CENTER"/>
             </VBox>
-            <HBox spacing="10.0">
+
+            <HBox spacing="10.0" alignment="CENTER">        
                 <Button text="ENTRAR" fx:id="loginButton"/>
                 <Button text="REGISTRARSE" fx:id="registerButton"/>
             </HBox>

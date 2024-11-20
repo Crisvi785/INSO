@@ -16,8 +16,8 @@ public class App extends Application {
     private static final Logger logger = LogManager.getLogger(App.class);
 
     private static Stage primaryStage;
-    private static final double SMALL_WIDTH = 700;
-    private static final double SMALL_HEIGHT = 600;
+    private static final double SMALL_WIDTH = 840;
+    private static final double SMALL_HEIGHT = 570;
 
     @Override
     public void start(Stage stage) throws IOException {
